@@ -8,7 +8,7 @@ if( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) 
     $message = nl2br($_POST['message']);
     $serverName = "io-server.database.windows.net";
     $connectionOptions = array(
-        "Database" => "InsightOut",
+        "Database" => "insightout",
         "Uid" => "io",
         "PWD" => "@Developer19"
     );
