@@ -17,7 +17,7 @@ $("#send").on("click", function(){
         if(validateEmail(email))
         {
             $.ajax({
-                url: "../ContactRepository.php",
+                url: "../repository/ContactRepository.php",
                 type: "POST",
                 data: { name: name, email: email, message: message},
                 success: function(resp){
