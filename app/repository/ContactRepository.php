@@ -31,3 +31,4 @@ if($conn)
 sqlsrv_free_stmt($statement);
 sqlsrv_close($conn);
 
+?>
