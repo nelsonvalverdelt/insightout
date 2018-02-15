@@ -14,17 +14,20 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
 // Set up the proc params array - be sure to pass the param by reference
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+
 $params = array(
-    array(&$_POST['name'], SQLSRV_PARAM_OUT),
-    array(&$_POST['email'], SQLSRV_PARAM_OUT),
-    array(&$_POST['message'], SQLSRV_PARAM_OUT)
+    array($name, SQLSRV_PARAM_IN),
+    array($email, SQLSRV_PARAM_IN),
+    array($message, SQLSRV_PARAM_IN)
     );
 
 if($conn)
 {
-    $sql = "EXEC INSERT_CONTACT_SP @NAME = ?, @EMAIL = ?, @MESSAGE = ?";
-    
-    $statement = sqlsrv_prepare($conn, $sql, $params);   
+    $statement = sqlsrv_query($conn, "{CALL INSERT_CONTACT_SP(?,?,?)}", $params);  
+
     if($statement){
         echo json_encode(TRUE);
     }else{

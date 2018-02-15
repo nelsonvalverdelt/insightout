@@ -57,7 +57,7 @@ $("#send").on("click", function(){
 
 
 $("#send2").on("click",function(event){
-    var email = $("#email").val();
+    var email = $("#email-notify").val();
 
     if($.trim(email).length > 0)
     {
