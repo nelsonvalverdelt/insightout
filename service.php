@@ -1,7 +1,9 @@
 <?php
 date_default_timezone_set('America/Lima');
-$fecha = date('m-d-Y');
-$tiempo = date('H:i:s');
+
+$date = date('m-d-Y');
+$time = date('H:i:s');
+
 if( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) ){
     $name = $_POST['name'];
     $email = $_POST['email'];
