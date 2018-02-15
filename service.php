@@ -4,9 +4,6 @@ date_default_timezone_set('America/Lima');
 $date = date('m-d-Y');
 $time = date('H:i:s');
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$message = nl2br($_POST['message']);
 $serverName = "io-server.database.windows.net";
 $connectionOptions = array(
     "Database" => "insightout",
@@ -16,11 +13,18 @@ $connectionOptions = array(
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
+// Set up the proc params array - be sure to pass the param by reference
+$params = array(
+    array(&$_POST['name'], SQLSRV_PARAM_OUT),
+    array(&$_POST['email'], SQLSRV_PARAM_OUT),
+    array(&$_POST['message'], SQLSRV_PARAM_OUT)
+    );
+
 if($conn)
 {
     $sql = "EXEC INSERT_CONTACT_SP @NAME = ?, @EMAIL = ?, @MESSAGE = ?";
     
-    $statement = sqlsrv_prepare($conn, $sql, array(&$name, &$email, &$message));   
+    $statement = sqlsrv_prepare($conn, $sql, $params);   
     if($statement){
         echo json_encode(TRUE);
     }else{
