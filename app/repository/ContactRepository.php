@@ -1,17 +1,8 @@
 <?php
-date_default_timezone_set('America/Lima');
 
-$date = date('m-d-Y');
-$time = date('H:i:s');
+include '../config.php';
 
-$serverName = "io-server.database.windows.net";
-$connectionOptions = array(
-    "Database" => "insightout",
-    "Uid" => "io",
-    "PWD" => "@Developer19"
-);
-//Establishes the connection
-$conn = sqlsrv_connect($serverName, $connectionOptions);
+$conn = GetConnection();
 
 // Set up the proc params array - be sure to pass the param by reference
 $name = $_POST['name'];
@@ -37,4 +28,6 @@ if($conn)
     echo json_encode("Internal Server");
 }
 
+sqlsrv_free_stmt($statement);
+sqlsrv_close($conn);
 
