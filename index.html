@@ -735,31 +735,32 @@
                 <div class="col-md-6">
                     <!-- Form Start-->
                     <div class="contact_from">
-                        <form>
+                        <form role="form" method="post">
                             <!-- Message Input Area Start -->
                             <div class="contact_input_area">
                                 <div class="row">
                                     <!-- Single Input Area Start -->
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="Tu Nombre" required>
+                                            <input type="text" class="form-control" id="name" placeholder="Tu Nombre" required/>
                                         </div>
                                     </div>
                                     <!-- Single Input Area Start -->
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="Tu Correo" required>
+                                            <input type="email" class="form-control" id="email" placeholder="Tu Correo" required/>
                                         </div>
                                     </div>
                                     <!-- Single Input Area Start -->
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" name="message" id="message" cols="30" rows="4" placeholder="Tu Mensaje *" required></textarea>
+                                            <textarea class="form-control" id="message" cols="30" rows="4" placeholder="Tu Mensaje *" required></textarea>
                                         </div>
                                     </div>
                                     <!-- Single Input Area Start -->
                                     <div class="col-12">
-                                        <button class="btn submit-btn" id="send">Enviar ahora!</button>
+                                        <input type="button" class="btn submit-btn" id="send" value="Enviar ahora!"/>
+                                        
                                     </div>
                                     <div id="snackbar"></div>
                                     <div id="snackbar-error"></div>
