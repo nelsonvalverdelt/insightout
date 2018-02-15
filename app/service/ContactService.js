@@ -11,7 +11,6 @@ $("#send").on("click", function(){
     var email = $("#email").val();
     var message = $("#message").val();
 
-    console.log(name + "-"+ email + "-" + message);
     if($.trim(name).length > 0 && $.trim(email).length > 0)
     {
         if(validateEmail(email))

@@ -4,8 +4,6 @@ include '../config.php';
 
 $conn = GetConnection();
 
-print($conn);
-
 // Set up the proc params array - be sure to pass the param by reference
 $name = $_POST['name'];
 $email = $_POST['email'];
