@@ -6,18 +6,15 @@ $(document).ready(function(){
       }    
 
     $("#send").on("click", function(){
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var message = $("#message").val();
-
-        if($.trim(name).length > 0 && $.trim(email).length > 0)
+        var email = $("#email-notify").val();
+        if($.trim(email).length > 0)
         {
             if(validateEmail(email))
             {
                 $.ajax({
-                    url: "app/repository/ContactRepository.php",
+                    url: "app/repository/NotifyRepository.php",
                     type: "POST",
-                    data: { name: name, email: email, message: message},
+                    data: {email: email},
                     success: function(resp){
             
                             if(resp){
@@ -54,8 +51,6 @@ $(document).ready(function(){
 
     function Clear()
     {
-        $("#name").val('');
-        $("#email").val('');
-        $("#message").val('');
+        $("#email-notify").val('');
     }
 });
