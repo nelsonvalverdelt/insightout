@@ -5,7 +5,7 @@ $(document).ready(function(){
         return re.test(email);
       }    
 
-    $("#send").on("click", function(){
+    $("#send-notify").on("click", function(){
         var email = $("#email-notify").val();
         if($.trim(email).length > 0)
         {
