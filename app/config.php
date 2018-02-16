@@ -7,21 +7,15 @@ $time = date('H:i:s');
 
 function GetConnection()
 {
-    try
-    {
-        $serverName = "io-server.database.windows.net";
 
-        $connectionOptions = array(
-            "Database" => "insightout",
-            "Uid" => "io",
-            "PWD" => "@Developer19"
-        );
-        return sqlsrv_connect($serverName, $connectionOptions);
-        
-    }
-    catch(Exception $ex)
-    {
-         die($ex->getMessage());
-    }
+    $serverName = "io-server.database.windows.net";
+
+    $connectionOptions = array(
+        "Database" => "insightout",
+        "Uid" => "io",
+        "PWD" => "@Developer19"
+    );
+    return sqlsrv_connect($serverName, $connectionOptions);
+
 }
 ?>
