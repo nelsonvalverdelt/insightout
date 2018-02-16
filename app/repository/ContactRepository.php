@@ -18,17 +18,17 @@ $params = array(
 if($conn)
 {
     $statement = sqlsrv_query($conn, "{CALL INSERT_CONTACT_SP(?,?,?)}", $params);  
+    
+    sqlsrv_free_stmt($statement);
+    sqlsrv_close($conn);
 
     if($statement){
         echo json_encode(TRUE);
-    }else{
-        echo json_encode("Internal Server");
     }
 }else{
     echo json_encode("Internal Server");
 }
 
-sqlsrv_free_stmt($statement);
-sqlsrv_close($conn);
+
 
 ?>
