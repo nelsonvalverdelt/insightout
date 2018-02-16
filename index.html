@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Insight Out</title>
+    <title>Iptitudy</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -40,7 +40,7 @@
                     <div class="menu_area">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <!-- Logo -->
-                            <a class="navbar-brand" href="#">IO.</a>
+                            <a class="navbar-brand" href="#">AY.</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
@@ -54,12 +54,6 @@
                                     <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
                                 </ul>
-                                <div class="sing-up-button d-lg-none">
-                                    <a href="#">Regístrate!</a>
-                                </div>
-                                <div class="sing-up-button d-lg-none">
-                                        <a href="#">Regístrate!</a>
-                                </div>
                             </div>
                         </nav>
                     </div>
@@ -67,17 +61,42 @@
                 <!-- Signup btn -->
                 <div class="col-12 col-lg-2">
                     <div class="sing-up-button d-none d-lg-block">
-                        <a href="#">Regístrate!</a>
+                        <a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Regístrate !</a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-1">
-                        <div class="sign-up-button d-none d-lg-block">
-                            <a href="#">Ingresar!</a>
-                        </div>
+                    <div class="sign-up-button d-none d-lg-block">
+                        <a href="#">Ingresar</a>
                     </div>
-                    
+                </div>
             </div>
         </div>
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
     </header>
     <!-- ***** Header Area End ***** -->
 
@@ -87,8 +106,8 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md">
                     <div class="wellcome-heading">
-                        <h2>Insight Out</h2>
-                        <h3>IO</h3>
+                        <h2>Aptitudy</h2>
+                        <h3>AY</h3>
                         <p>	Nuestra propuesta de gamificación permite identificar el tipo de inteligencia en el que destacan escolares de secundaria quienes necesitan definir su orientación vocacional. </p>
                     </div>
                     <div class="get-start-area">
@@ -835,6 +854,9 @@
     <script src="app/service/ContactService.js"></script>
     <script src="app/service/NotifyService.js"></script>
     <script src="js/script.js"></script>
+    <script>
+     $('#myModal').modal({backdrop: 'static', keyboard: false})  
+    </script>
 </body>
 
 </html>
