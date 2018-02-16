@@ -530,7 +530,7 @@ p {
 }
 
 .form-control::placeholder {
-    color: #6767dfs;
+    color: #6767df;
     opacity: 1;
 }
 
@@ -555,8 +555,8 @@ p {
 }
 
 .get-start-area .submit:hover {
-    background: #0000ff;
-    color: #0397af;
+    background: #faa61a;
+    color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
     transition-duration: 500ms;
