@@ -23,6 +23,5 @@ function GetConnection()
     {
          die($ex->getMessage());
     }
-
 }
 ?>
