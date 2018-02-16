@@ -1,16 +1,8 @@
 <?php
-/*
-include '../config.php';
-*/
-$serverName = "io-server.database.windows.net";
 
-$connectionOptions = array(
-    "Database" => "insightout",
-    "Uid" => "io",
-    "PWD" => "@Developer19"
-);
-$conn = sqlsrv_connect($serverName, $connectionOptions);
- 
+include '../config.php';
+
+$conn = GetConnection();
 
 // Set up the proc params array - be sure to pass the param by reference
 $name = $_POST['name'];
@@ -27,15 +19,14 @@ if($conn)
 {
     $statement = sqlsrv_query($conn, "{CALL INSERT_CONTACT_SP(?,?,?)}", $params);  
     
-    sqlsrv_free_stmt($statement);
-    sqlsrv_close($conn);
-
     if($statement){
         echo json_encode(TRUE);
     }
 }else{
     echo json_encode("Internal Server");
 }
+sqlsrv_free_stmt($statement);
+sqlsrv_close($conn);
 
 
 
