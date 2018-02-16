@@ -1,8 +1,16 @@
 <?php
-
+/*
 include '../config.php';
+*/
+$serverName = "io-server.database.windows.net";
 
-$conn = GetConnection();
+$connectionOptions = array(
+    "Database" => "insightout",
+    "Uid" => "io",
+    "PWD" => "@Developer19"
+);
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+ 
 
 // Set up the proc params array - be sure to pass the param by reference
 $name = $_POST['name'];
