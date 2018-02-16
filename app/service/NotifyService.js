@@ -6,7 +6,9 @@ $(document).ready(function(){
       }    
 
     $("#send-notify").on("click", function(){
+        
         var email = $("#email-notify").val();
+
         if($.trim(email).length > 0)
         {
             if(validateEmail(email))
